@@ -84,6 +84,29 @@ AUTHENTICATION_APPLICATION = (
 
 SITE_ID = 1
 
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+""" This lines tells allauth to use either username/email
+as an authentication method """
+ACCOUNT_AUTHENTICATION_METHOD = 'username_email'
+
+""" These 3 settings make it so an e-mail
+is required to register for the site,
+verifying the email is mandatory
+and required to enter it twice on the registration page """
+ACCOUNT_EMAIL_REQUIRED = True
+ACCOUNT_EMAIL_VERIFICATION = 'mandatory'
+ACCOUNT_SIGNUP_EMAIL_ENTER_TWICE = True
+
+# Username cannot be shorter than 4 characters
+ACCOUNT_USERNAME_MIN_LENGTH = 4
+
+# Login URL
+LOGIN_URL = '/accounts/login/'
+
+# URL to be directed to after login (homepage)
+LOGIN_REDIRECT_URL = '/'
+
 WSGI_APPLICATION = 'the_tech_spot.wsgi.application'
 
 
