@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css2?family=Bowlby+One+SC&family=Fira+Sans+Extra+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Sixtyfour&display=swap');
+
+
+html {
+    height: 100%;
+}
+
+body {
+    background: url('/media/the-tech-spot-background.jpg') no-repeat center center fixed;
+    background-size: cover;
+    height: calc(100vh - 164px);
+    color: #555;
+    font-family: "Bowlby One SC", sans-serif;
+    
+}
+
+.brand-logo {
+    width: 7rem;
+    height: auto;
+}
+
+/* from Bulma */
+.icon {
+    align-items: center;
+    display: inline-flex;
+    justify-content: center;
+    height: 1.5rem;
+    width: 1.5rem;
+}
+
+.logo-font {
+    text-transform: uppercase;
+}
+
+.main-logo-link {
+    width: fit-content;
+}
+
+.shop-now-button {
+    background: #1D597D;
+    color: white;
+    min-width: 260px;
+}
+
+.btn-black {
+    background: #1D597D;
+    color: white;
+}
+
+.shop-now-button:hover,
+.shop-now-button:active,
+.shop-now-button:focus,
+.btn-black:hover,
+.btn-black:active,
+.btn-black:focus {
+    background: #83B6B9;
+    color: white;
+}
+
+.text-blue {
+    color: #1D597D !important;
+}
+
+.text-white {
+    color: white;
+}
+
+.border-black {
+    border: 1px solid #83B6B9 !important;
+}
+
+/* -------------------------------- Media Queries */
+
+/* Slightly larger container on xl screens */
+@media (min-width: 1200px) {
+  .container {
+    max-width: 80%;
+  }
+}
+
+/* fixed top navbar only on medium and up */
+@media (min-width: 992px) {
+    .fixed-top-desktop-only {
+        position: fixed;
+        top: 0;
+        right: 0;
+        left: 0;
+        z-index: 1030;
+    }
+
+    .header-container {
+        padding-top: 164px;
+    }
+}
+
