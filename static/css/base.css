@@ -52,7 +52,8 @@ body {
 .shop-now-button:focus,
 .btn-black:hover,
 .btn-black:active,
-.btn-black:focus {
+.btn-black:focus,
+.btt-button:hover {
     background: #83B6B9;
     color: white;
 }
@@ -75,6 +76,19 @@ body {
 
 .border-black {
     border: 1px solid #83B6B9 !important;
+}
+
+.btt-button {
+    height: 45px;
+    width: 45px;
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    
+}
+
+.btt-link {
+    cursor: pointer;
 }
 
 /* -------------------------------- Media Queries */
