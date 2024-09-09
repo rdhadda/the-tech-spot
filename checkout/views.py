@@ -4,14 +4,14 @@ from django.contrib import messages
 
 
 def checkout(request):
-    bag = request.session.get('bag, {}')
+    bag = request.session.get('bag', {})
 
     if not bag:
         messages.error(request, "There's nothing in your bag at the moment")
         return redirect(reverse('products'))
 
     order_form = OrderForm()
-    template = 'check/checkout.html'
+    template = 'checkout/checkout.html'
     context = {
         'order_form': order_form
         
