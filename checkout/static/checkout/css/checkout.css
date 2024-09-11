@@ -1,5 +1,5 @@
 .StripeElement,
-.stripe-style-input {
+.stripe-style-input, select {
   box-sizing: border-box;
   height: 40px;
   padding: 10px 12px;
@@ -32,8 +32,16 @@
 
 #payment-form .form-control,
 #card-element {
-  color: #83b6b9;
+  color: black;
   border: 1px solid #83b6b9;
+}
+
+select, select option{
+  color: black !;
+}
+
+select:invalid, select option[value=""]{
+  color: #aab7c4 !important;
 }
 
 #loading-overlay {
