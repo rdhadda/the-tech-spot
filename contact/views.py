@@ -5,6 +5,11 @@ from profiles.models import UserProfile
 
 
 def contact(request):
+    """
+    Contact function which takes in the ContactForm
+    to allow a user to contact the store.
+
+    """
 
     if request.method == 'POST':
         contact_form = ContactForm(request.POST)
@@ -20,7 +25,7 @@ def contact(request):
             messages.error(request, 'There was an error sending your enquiry. \
             Please ensure all fields are valid and try again.')
             return redirect('contact')
-    else: 
+    else:  # Populates the form with the user details if logged in
         if request.user.is_authenticated:
             try:
                 user = UserProfile.objects.get(user=request.user)
