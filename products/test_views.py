@@ -1,0 +1,36 @@
+from django.test import TestCase
+from django.urls import reverse
+from .models import Product
+
+
+class TestProductViews(TestCase):
+
+    def setUp(self):
+        # create a product
+        self.product = Product.objects.create(name='Test Product', price=100)
+    
+    def test_product_details_view(self):    
+
+        # gets the URL of what would be passed through to the product detail view
+        url = reverse('product_detail', args=[self.product.id])
+
+        # simulate a get request to the product detail view
+        response = self.client.get(url)
+
+        # assert that the request was successful
+        self.assertEqual(response.status_code, 200)
+
+        # assert that the correct template is used
+        self.assertTemplateUsed(response, 'products/product_detail.html')
+
+        # assert the correct product is passed in the context
+        self.assertEqual(response.context['product'], self.product)
+    
+    def test_get_products_page(self):
+        response = self.client.get('/products/')
+        self.assertEqual(response.status_code, 200)
+        self.assertTemplateUsed(response, 'products/products.html')
+
+    def test_get_add_product_page_user(self):
+        response = self.client.get('/products/add/')
+        self.assertEqual(response.status_code, 302)
