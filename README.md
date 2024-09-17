@@ -191,11 +191,134 @@ All pages of the website have the following elements in common:
 
 ![Footer](documentation/images/the-tech-spot-footer.png)
 
+#### Defensive Programming
+
+Defensive programming has been used throughout the site where necessary to prevent unauthorized access to certain URLs. This has been achieved by using the @loginrequired decorator for certain functions. As a secondary defense the views also check whether the user is a superuser if not a toast is displayed informing the user they do not have access to the URL.
+
+#### Home Page
+
+The home page consist of a welcome message, a shop now button which takes the shopper through to all the products available and a grid of images related to the store.
+
+![Homepage](documentation/images/the-tech-spot-homepage.png)
+
+#### Products Page
+
+The products page displays all of the products available within the store. The products are displayed utilizing a bootstrap grid and card class. Each product shows the name, image, price, category and rating. If the user is a superuser each product shows a update/delete link allowing the superuser to maintain the store.
+
+The page also shows the number of products being displayed on the page on the top left of the page. Additionally if a certain category if being used then a link back to all products is shown and if a search term is used, this term will also be displayed.
+
+To the right of the screen is a sort box allowing the shopper to sort products by price, category and rating.
+
+![Products Page](documentation/images/the-tech-spot-products-page.png)
+
+#### Product Detail Page
+
+Once a user has clicked on a product from the products page they will be taken through to the product detail page. This page shows an image of the product, title, price rating, category and description. If the user is a super user the update/delete links are also displayed here allowing for easy store maintenance 
+
+There is also a quantity input with plus and minus buttons allowing shoppers to select their desired quantity of a product. A shopper is unable to select less than one product. 
+
+Shoppers then have the option to add the quantity to their basket. Once added to the basket a toast is displayed showing the shopper what has been added to the basket and a link to go to secure checkout from the toast.
+
+There is also a keep shopping button which takes the shopper back to the previous page.
+
+![Product Detail Page](documentation/images/the-tech-spot-product-detail-page.png)
+
+#### Bag Page
+
+The bag page displays all of the products which the shopper added to their bag. An image, description, product price, quantity and subtotal is shown for each product. 
+
+The quantity field allows the shopper to update the quantity of the product directly from their shopping bag. The delete link allows the shopper to delete the entire product from their shopping bag.
+
+The subtotal field calculates the quantity multiplied by the product price to give the shopper a subtotal for that product.
+
+The page also displays a bag total, delivery total and grand total.
+
+The keep shopping button takes the shopper back to the products page and the secure checkout button navigates the shopper through to the checkout process.
+
+![Bag Page](documentation/images/the-tech-spot-bag-page.png)
+
+#### Checkout Page
+
+The checkout page requires the shopper to fill out a form based upon the UserProfile model. If a user is logged in the name and e-mail field are pre-populated. If a user has filled out their profile with their delivery information, the form will be pre-populated with this information. If the user has not pre-populated their delivery information they have the option to save the delivery information to their profile via a checkout box to allow for faster checkout for their next purchase. 
+
+If a shopper does not have a user account/profile then the information will need to be manually entered. There will also be a link displayed underneath the country field to prompt the user to login or to create an account. 
+
+Underneath the details and delivery section is a payment input which is processed by stripe. If a user enters incorrect information a warning message will be displayed underneath the payment input.
+
+The adjust bag button will take the user back to the bag page. The complete order button will complete the purchase and take the user through to the checkout success page. Underneath the complete order button is a warning to the shopper, highlighting to them how much their card will be charged for the purchase.
+
+On the right hand side of the checkout page, shows an order summary to the shopper.
+
+![Checkout Page](documentation/images/the-tech-spot-checkout-page.png)
+
+#### Checkout Overlay
+
+Once a shopper has clicked on the complete order button a spinning overlay will be displaying, indicating to the shopper that their payment is being processed. If the payment is unsuccessful the shopper will be re-directed to the checkout page.
+
+#### Checkout Success Page
+
+Once the payment has been processed, the shopper will be presented with the checkout success page. This shows a summary of what has been purchased and informs the shopper that a confirmation email will be sent out to them.
+
+A success toast is also displayed indicating that the purchase was successful.
+
+At the bottom of the summary is a button which will take the shopper through to the stores latest deals.
+
+![Checkout Success](documentation/images/the-tech-spot-checkout-success.png)
+
+#### Profile Page
+
+The profile page shows the users default delivery information. Users can update this information at anytime by entering their information and clicking on the update information button. If successful the user will be presented with a success toast. 
+
+On the right hand side of the page displays the users past shopping history. The order number is a link to the order confirmation. 
+
+![Profile Page](documentation/images/the-tech-spot-profile-page.png)
+
+#### Contact Page
+
+The contact page allows a shopper to easily contact the store. All fields are required fields. If a user is logged in their name and e-mail are pre-populated. Once a user has clicked on the send enquiry button they will be re-directed to the home page and a success toast will be displayed informing them a response can be expected in 1 day.
+
+The cancel button re-directs the user through to the products page. 
+
+![Contact Page](documentation/images/the-tech-spot-contact-page.png)
+
+#### Add Product (Super Users Only)
+
+Superusers have the ability to add products to the store directly from the website rather than through Django admin. The superuser is presented with a form which is based on the product model. This can be accessed via Account > Product Management link in the navbar. Required fields are marked with an star (*). 
+
+The cancel button takes the user back through to the products page.
+
+The add product button adds the product to the database and directs the user to the product detail page of the newly created product.
+
+![Add Product](documentation/images/the-tech-spot-add-product-page.png)
+
+#### Edit Product Page (Super Users Only)
+
+Similar to the add product page, super users are able to edit products directly from the website. The edit product page is accessed from the update links next to the products on the product page and product detail page. The form will be pre-populated with the product details and a toast displayed showing the user which product they're updating. From here the superuser can make any necessary amendments.
+
+The cancel button wil take the user back to the products page.
+
+The update product will update the product details and directs the user to the product detail page of the updated product.
+
+![Edit Product](documentation/images/the-tech-spot-edit-product-page.png)
+
+#### Delete Product
+
+When a superuser clicks on a delete link for a product they are presented with a modal confirming whether they would like to delete the product. 
+
+![Delete Modal](documentation/images/the-tech-spot-delete-modal.png)
 
 
 ### Future Implementations
 
+- Implement stock levels for each product.
+- Add user reviews for each product.
+- Implement social login.
+
 ## Accessbility
+
+- Using semantic HTML.
+- Creating sufficient colour contrast throughout the website.
+- Using descriptive alt attributes for images throughout the site.
 
 ## Technologies Used
 
@@ -207,9 +330,74 @@ All pages of the website have the following elements in common:
 
 ### Database Used
 
+- sqlite3
+
 ### Frameworks Used
 
+[Django](https://www.djangoproject.com/) - A high-level Python web framework that encourages rapid development and clean, pragmatic design.
+
+[Bootstrap](https://getbootstrap.com/docs/4.6/getting-started/introduction/) - A framework for building responsive, mobile-first sites.
+
 ### Libraries and Packages Used
+
+[Pip](https://pypi.org/project/pip/) - Tool for installing Python packages.
+
+[Jinja](https://jinja.palletsprojects.com/en/3.1.x/) - Templating engine.
+
+[Balsamiq](https://balsamiq.com/) - Used to create wireframes.
+
+[Git](https://git-scm.com/) - For version control.
+
+[Github](https://github.com/) - To save and store the files for the website.
+
+[Gitpod](https://gitpod.com/) - IDE to create the project.
+
+[Google Fonts](https://fonts.google.com/) - To import the fonts used on the website.
+
+Google Dev Tools - To troubleshoot and test features, and solve issues with responsiveness and styling.
+
+[Am I Responsive](https://ui.dev/amiresponsive) To show the website across a range of devices.
+
+[Fontawsome](https://fontawesome.com/start) For the cross and tick.
+
+[Shields](https://shields.io/) Add badges to README.
+
+[Lucid Chart](https://lucid.app) To create the database schema.
+
+[jQuery](https://jquery.com/) - A JavaScript Framework
+
+[Django Allauth](https://django-allauth.readthedocs.io/en/latest/) - Used for authentication, registration & account management.
+
+[django-countries](https://pypi.org/project/django-countries/7.2.1/) 
+
+[django_crispy_forms](https://pypi.org/project/django-crispy-forms/) - 
+
+[gunicorn](https://pypi.org/project/gunicorn/) - a Python WSGI HTTP Server
+
+[pillow](https://pypi.org/project/Pillow/) - Python imaging library
+
+[dj_databsae_url](https://pypi.org/project/dj-database-url/) - allows us to utilise the DATABASE_URL variable
+
+[psycopg2](https://pypi.org/project/psycopg2/) - a postgres database adapter which allow us to connect with a postgres database
+
+[django-storages](https://pypi.org/project/django-storages/) - a storage backend library
+
+[boto3](https://pypi.org/project/boto3/) - Allows connection to AWS S3 bucket
+
+[coverage](documentation/testing/coverage/checkout-forms.png) - Used to create test reports
+
+### Stripe
+
+[Stripe](https://stripe.com/gb) has been used in the project to implement the payment system.
+
+The following card numbers can be used to test different payment scenarios.
+
+| Type | Card No | Expiry | CVC | ZIP |
+| :--- | :--- |:--- | :--- | :--- |
+| Success| Visa | 4242 4242 4242 4242 | A date in the future | Any 3 digits | Any 5 digits |
+| Require authorisation | 4000 0027 6000 3184 | A date in the future | Any 3 digits | Any 5 digits |
+| Declined | 4000 0000 0000 0002 | A date in the future | Any 3 digits | Any 5 digits |
+
 
 ## Deployment & Local Development
 
