@@ -34,13 +34,13 @@
             <img
               class="w-100"
               src="{{ item.product.image.url }}"
-              alt="{{ product.name }}"
+              alt="{{ item.product.name }}"
             />
             {% else %}
             <img
               class="w-100"
               src="{{ MEDIA_URL }}noimage.png"
-              alt="{{ product.name }}"
+              alt="{{ item.product.name }}"
             />
             {% endif %}
           </a>
@@ -110,11 +110,11 @@
             />
             {% else %}
             <label class="form-check-label" for="id-save-info">
-              <a class="text-info" href="{% url 'account_signup' %}"
+              <a class="text-info text-blue" href="{% url 'account_signup' %}"
                 >Create an account</a
               >
               or
-              <a class="text-info" href="{% url 'account_login' %}">login</a> to
+              <a class="text-info text-blue" href="{% url 'account_login' %}">login</a> to
               save this information
             </label>
             {% endif %}
@@ -146,7 +146,7 @@
             </span>
             <span class="font-weight-bold">Adjust Bag</span>
           </a>
-          <button id="submit-button" class="btn btn-black rounded-0">
+          <button id="submit-button" class="btn btn-blue rounded-0">
             <span class="font-weight-bold">Complete Order</span>
             <span class="icon">
               <i class="fas fa-lock"></i>
@@ -168,7 +168,7 @@
 </div>
 
 <div id="loading-overlay">
-  <h1 class="text-light logo-font loading-spinner">
+  <h1 class="text-light logo-font loading-spinner" aria-label="Loading">
     <span class="icon">
       <i class="fas fa-3x fa-sync-alt fa-spin"></i>
     </span>
