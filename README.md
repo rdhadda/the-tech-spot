@@ -1,131 +1,242 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# The Tech Spot
 
-Welcome USER_NAME,
+The Tech Spot was created as my fourth milestone project, built using a Django framework alongside sqlite.
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
+![The Tech Spot. Screenshot of website]()
 
-You can safely delete this README.md file or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **June 18, 2024**
+[View The Tech Spot on Heroku]()
 
-## Gitpod Reminders
+![GitHub last commit (by committer)](https://img.shields.io/github/last-commit/rdhadda/the-tech-spot)
+![GitHub language count](https://img.shields.io/github/languages/count/rdhadda/the-tech-spot)
+![GitHub top language](https://img.shields.io/github/languages/top/rdhadda/the-tech-spot?color=red)
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+## CONTENTS
 
-`python3 -m http.server`
+- [User Experience (UX)](#User-Experience-UX)
 
-A blue button should appear to click: _Make Public_,
+  - [User Stories](#User-Stories)
 
-Another blue button should appear to click: _Open Browser_.
+- [Design](#Design)
 
-To run a backend Python file, type `python3 app.py` if your Python file is named `app.py`, of course.
+  - [Colour Scheme](#Colour-Scheme)
+  - [Typography](#Typography)
+  - [Imagery](#Imagery)
+  - [Wireframes](#Wireframes)
+  - [Database Design](#database-design)
+  
+- [Features](#Features)
+    - [Web Pages](#web-pages)
+    - [Accessibility](#Accessibility)
 
-A blue button should appear to click: _Make Public_,
+- [Technologies Used](#Technologies-Used)
+  - [Languages Used](#Languages-Used)
+  - [Frameworks, Libraries & Programs Used](#frameworks-libraries-and-programs-used)
 
-Another blue button should appear to click: _Open Browser_.
+- [Deployment and Local Development](#deployment--local-development)  
+    - [Local Development](#Local-Development)
+    - [Remote Deployment](#remote-deployment-heroku)
+   
 
-By Default, Gitpod gives you superuser security privileges. Therefore, you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+- [Testing](#Testing)
 
-To log into the Heroku toolbelt CLI:
+  - [Solved Bugs](#Solved-Bugs)
+  - [Known Bugs](#Known-Bugs)
 
-1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
-2. Scroll down to the *API Key* and click *Reveal*
-3. Copy the key
-4. In Gitpod, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
-
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you, so do not share it. If you accidentally make it public, you can create a new one with _Regenerate API Key_.
-
-### Connecting your Mongo database
-
-- **Connect to Mongo CLI on a IDE**
-- navigate to your MongoDB Clusters Sandbox
-- click **"Connect"** button
-- select **"Connect with the MongoDB shell"**
-- select **"I have the mongo shell installed"**
-- choose **mongosh (2.0 or later)** for : **"Select your mongo shell version"**
-- choose option: **"Run your connection string in your command line"**
-- in the terminal, paste the copied code `mongo "mongodb+srv://<CLUSTER-NAME>.mongodb.net/<DBname>" --apiVersion 1 --username <USERNAME>`
-  - replace all `<angle-bracket>` keys with your own data
-- enter password _(will not echo **\*\*\*\*** on screen)_
-
-------
-
-## Release History
-
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
-
-**June 18, 2024,** Add Mongo back into template
-
-**June 14, 2024,** Temporarily remove Mongo until the key issue is resolved
-
-**May 28 2024:** Fix Mongo and Links installs
-
-**April 26 2024:** Update node version to 16
-
-**September 20 2023:** Update Python version to 3.9.17.
-
-**September 1 2021:** Remove `PGHOSTADDR` environment variable.
-
-**July 19 2021:** Remove `font_fix` script now that the terminal font issue is fixed.
-
-**July 2 2021:** Remove extensions that are not available in Open VSX.
-
-**June 30 2021:** Combined the P4 and P5 templates into one file, added the uptime script. See the FAQ at the end of this file.
-
-**June 10 2021:** Added: `font_fix` script and alias to fix the Terminal font issue
-
-**May 10 2021:** Added `heroku_config` script to allow Heroku API key to be stored as an environment variable.
-
-**April 7 2021:** Upgraded the template for VS Code instead of Theia.
-
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
-
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
-
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
-
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
-
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
-
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
-
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
-
-------
-
-## FAQ about the uptime script
-
-**Why have you added this script?**
-
-It will help us to calculate how many running workspaces there are at any one time, which greatly helps us with cost and capacity planning. It will help us decide on the future direction of our cloud-based IDE strategy.
-
-**How will this affect me?**
-
-For everyday usage of Gitpod, it doesn’t have any effect at all. The script only captures the following data:
-
-- An ID that is randomly generated each time the workspace is started.
-- The current date and time
-- The workspace status of “started” or “running”, which is sent every 5 minutes.
-
-It is not possible for us or anyone else to trace the random ID back to an individual, and no personal data is being captured. It will not slow down the workspace or affect your work.
-
-**So….?**
-
-We want to tell you this so that we are being completely transparent about the data we collect and what we do with it.
-
-**Can I opt out?**
-
-Yes, you can. Since no personally identifiable information is being captured, we'd appreciate it if you let the script run; however if you are unhappy with the idea, simply run the following commands from the terminal window after creating the workspace, and this will remove the uptime script:
-
-```
-pkill uptime.sh
-rm .vscode/uptime.sh
-```
-
-**Anything more?**
-
-Yes! We'd strongly encourage you to look at the source code of the `uptime.sh` file so that you know what it's doing. As future software developers, it will be great practice to see how these shell scripts work.
+- [Credits](#Credits)
+  - [Code Used](#Code-Used)
+  - [Media](#Media)
+  - [Acknowledgments](#Acknowledgments)
 
 ---
 
-Happy coding!
+## User Experience (UX)
+
+### Purpose
+
+The Tech Spot is designed to provide users with an online platform where they can browse, purchase, and learn about the latest tech products, such as TVs, laptops, game consoles, and mobile phones. It aims to offer a convenient shopping experience with detailed product information and secure payment options.
+
+#### Why The Site is Needed
+
+- Convenience: Allows customers to shop from the comfort of their homes, saving time compared to visiting physical stores.
+
+- 24/7 Availability: The platform provides users access to shop anytime, increasing potential sales and customer satisfaction.
+
+- Broader Reach: Expands the customer base beyond local boundaries, enabling users from different regions to access the products.
+
+#### Security Features
+
+- Secure Payment Gateway: Integrates with secure payment service Stripe to handle transactions safely, ensuring credit card information is encrypted.
+
+- User Authentication: Account creation and login require strong passwords and email verification to secure user profiles.
+
+#### Target Audience
+
+- Tech Enthusiasts: People interested in the latest gadgets and technology products.
+
+- General Consumers: Anyone seeking electronic products for everyday use.
+
+- Students and Professionals: Users looking for devices like laptops or mobile phones for work or study.
+
+### User Stories
+
+There are three types of user for The Tech Spot. 
+
+- Guest User - A user who doesn't have an account.
+- User - A user who has an account.
+- Admins - A user(s) who has superuser status, giving them the ability to perform additional tasks such a manage orders, add/delete products.
+
+| **ID** | **As A/AN** | **I Want To Be Able To** | **So I Can** |
+|:---:|:---:|:---:|:---:|
+|**Viewing and Navigation**|
+| **1** | Shopper | Easily navigate the website | To find products/information on products |
+| **2** | Shopper | Quickly view a certain category of product  | Locate specific products |
+| **3** | Shopper | View individual product details | Determine the price, the description and product rating |
+| **4** | Shopper | View the running total of potential purchases  | Keep track of spending |
+| **5** | Shopper | View product deals | See which products are on offer  |
+|**Registration & User Accounts**|
+| **6** | Shopper | Register for an account | Access my profile |
+| **7** | Shopper | Login & Out | Access my profile |
+| **8** | Shopper | Recover my account incase I forget my password | Re-gain access to my account |
+| **9** | Shopper | Receive a verification email after sign up | Verify the account was set up successfully |
+| **10** | Shopper | Have a personalized profile page | Update my personal information |
+|**Searching & Sorting**|
+| **11** | Shopper | Sort products  | Easily sort the best rated, best priced and categorically sort products|
+| **12** | Shopper | Sort a specific category of products | Find the best-priced or best-rated product in a specific category, or sort the products in that category by name|
+| **13** | Shopper | Sort multiple categories of products simultaneously |  Find the best-priced or best-rated products across all categories |
+| **14** | Shopper | Search for products by name, description or keyword  | Easily locate a specific product|
+| **15** | Shopper | Easily see what I've searched for and the number of results | Quickly decide whether the product I want is available|
+|**Purchasing & Checkout**|
+| **16** | Shopper | Select the quantity of a product | Guarantee I select the correct quantity  |
+| **17** | Shopper | View items in my bag to be purchased | Identify the total cost of my purchase and all items I will receive  |
+| **18** | Shopper | Adjust the quantity of individual items in my bag  | Easily make changes to my purchase before checkout |
+| **19** | Shopper | Easily enter my payment information | Check out quickly and with no hassle |
+| **20** | Shopper | Feel my personal and payment information is safe and secure | Confidently provide the needed information to make a purchase |
+| **21** | Shopper | View an order confirmation after checkout | Check that no mistakes have been made |
+| **22** | Shopper | Receive an email confirmation after checking out | Keep the confirmation of what I've purchased for my records and have confidence that the shop has received my order |
+|**Admin & Store Management**|
+| **22** | Admin | Add a product | Add new items to my store |
+| **22** | Admin | Edit/update a product | Change product prices, descriptions, images and other product criteria |
+| **22** | Admin | Delete a product | Remove items that are no longer for sale |
+
+
+## Design
+
+### Colour Scheme
+
+![The-Tech-Spot](documentation\images\the-tech-spot-colour-scheme.png)
+
+The chosen colour scheme is designed to convey a sense of trust and modernity to The Tech Stop store. 
+
+I believe, together, these colors create a balanced and visually appealing design that reinforces the site’s credibility and modernity, while ensuring a positive user experience.
+
+### Typography
+
+Google Fonts was used for the following fonts:
+
+- Fira Sans Extra Condensed - All text across the site
+
+![Typography](documentation\images\the-tech-spot-fire-sans-condensed.png)
+
+- Bowlby One - The Tech Spot logo
+
+![Typography](documentation\images\the-tech-spot-bowlby-one.png)
+
+### Imagery
+
+All images on the webpage were taken from Currys.co.uk. I have credited these in the [credits](#credits) section.
+
+### Wireframes
+
+Wireframes were created for mobile, tablet and desktop using Balsamiq.
+
+### Database Design
+
+The Tech Spot is based on a relational database. The database is made up of 7 tables:
+
+1. Category
+2. Product
+3. Order
+4. OrderLineItem
+5. Contact
+6. UserProfile
+7. User (Django Default Table)
+
+The relationship between the tables are as follows:
+
+1. Category to Product - One-to-Many - One category can have many products
+
+2. Product to OrderLineItem - Many-to-One - One product can be associated with multiple instances of OrderLineItem
+
+3. Order to OrderLineItem - One-to-Many - A single order can have multiple OrderLineItem entries
+
+4. Contact - This is a standalone table which doesn't have a relationship to any other table.
+
+5. UserProfile to User - One-to-One - Only one user can have one user profile.
+
+### Features
+
+All pages of the website have the following elements in common:
+
+- Navbar - The navbar consists of:
+
+    - The Tech Spot logo which acts as a link back to the homepage.
+    - A search bar to allow a user to easily search products. 
+    - An account icon which allows a user to login/sign up.
+    - A basket link which takes the user through to the bag page
+    - Navigation links to different product categories
+
+![Navbar](documentation/images/the-tech-spot-navbar.png)
+
+- Footer - This consists of a link to the contact form, which allows a shopper to contact the store. Social links and reference to stripe payments
+
+![Footer](documentation/images/the-tech-spot-footer.png)
+
+
+
+### Future Implementations
+
+## Accessbility
+
+## Technologies Used
+
+### Languages Used
+
+- HTML, CSS, Javascript and Python
+
+### Frameworks, Libraries and Programs Used
+
+### Database Used
+
+### Frameworks Used
+
+### Libraries and Packages Used
+
+## Deployment & Local Development
+
+### Local Development
+
+#### Setup
+
+### How to Fork
+
+To fork the repository:
+
+1. Log in (or sign up) to Github.
+
+2. Go to the repository for this project, [The Tech Spot](https://github.com/rdhadda/the-tech-spot).
+
+3. Click the Fork button in the top right corner.
+
+### Remote Deployment Heroku
+
+## Testing
+
+Please see [TESTING.md](TESTING.md) file for both automated and manual testing of The Tech Spot.
+
+## Credits
+
+### Code Used
+
+### Media
+
+### Acknowledgments
