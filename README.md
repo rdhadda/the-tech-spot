@@ -173,6 +173,10 @@ The relationship between the tables are as follows:
 
 5. UserProfile to User - One-to-One - Only one user can have one user profile.
 
+6. UserProfile to Order - One-to-Many - One user can have many orders.
+
+![Database Schema](documentation/images/the-tech-spot-database-schema.png)
+
 ### Features
 
 All pages of the website have the following elements in common:
@@ -306,6 +310,10 @@ The update product will update the product details and directs the user to the p
 When a superuser clicks on a delete link for a product they are presented with a modal confirming whether they would like to delete the product. 
 
 ![Delete Modal](documentation/images/the-tech-spot-delete-modal.png)
+
+#### 400, 403, 404 & 500 Page
+
+I've implemented my own custom error pages. These pages all follow the same design with a message indicated to the user that an error has occurred.
 
 
 ### Future Implementations
