@@ -21,8 +21,10 @@ class TestBagViews(TestCase):
             'redirect_url': reverse('product_detail', args=[self.product.id])
         }
 
-        response = self.client.post(reverse('add_to_bag', args=[self.product.id]), post_data)
-
+        self.client.post(reverse(
+            'add_to_bag', args=[self.product.id]), post_data
+            )
+        
         bag = self.client.session.get('bag', {})
 
         self.assertIn(str(self.product.id), bag)
@@ -35,20 +37,16 @@ class TestBagViews(TestCase):
             'redirect_url': reverse('product_detail', args=[self.product.id])
         }
 
-        self.client.post(reverse('add_to_bag', args=[self.product.id]), post_data)
+        self.client.post(reverse(
+            'add_to_bag', args=[self.product.id]), post_data
+            )
 
         bag = self.client.session.get('bag', {})
 
-        response = self.client.post(reverse('remove_from_bag', args=[self.product.id]))
-
+        self.client.post(reverse(
+            'remove_from_bag', args=[self.product.id])
+            )
+              
         bag = self.client.session.get('bag', {})
 
         self.assertNotIn(str(self.product.id), bag)
-
-        
-
-
-
-    
-
-

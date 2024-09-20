@@ -1,5 +1,6 @@
 from django.contrib import admin
-from.models import Product, Category
+from .models import Product, Category
+
 
 class ProductAdmin(admin.ModelAdmin):
     """ Displays these fields within the Django
@@ -25,7 +26,6 @@ class CategoryAdmin(admin.ModelAdmin):
         'friendly_name',
         'name'
     )
-
 
 
 admin.site.register(Product, ProductAdmin)

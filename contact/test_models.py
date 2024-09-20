@@ -5,7 +5,12 @@ from .models import Contact
 class TestContactModels(TestCase):
 
     def test_string_representation(self):
-        contact = Contact(name='Test', email="test@email.com", subject='Test', message='Test')
+        contact = Contact(
+            name='Test',
+            email="test@email.com",
+            subject='Test',
+            message='Test'
+        )
         self.assertEqual(str(contact), f"{contact.name} - {contact.subject}")
 
     def test_resolved_defaults_to_false(self):
@@ -16,4 +21,3 @@ class TestContactModels(TestCase):
             message='Test'
         )
         self.assertFalse(contact.resolved)
-

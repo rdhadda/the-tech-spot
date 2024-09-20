@@ -1,15 +1,16 @@
 from django.test import TestCase
 from django.urls import reverse
 from django.contrib.auth.models import User
-from .models import UserProfile
 from .forms import UserProfileForm
+
 
 class TestProfile(TestCase):
 
     def setUp(self):
 
         # Create a user and associate it with a UserProfile
-        self.user = User.objects.create_user(username='testdjangouser', password='password123')
+        self.user = User.objects.create_user(username='testdjangouser',
+                                             password='password123')
         self.profile = self.user.userprofile
 
         # Log the user in
@@ -40,7 +41,7 @@ class TestProfile(TestCase):
             'default_county': 'Test County'
         }
 
-        response = self.client.post(reverse('profile'), post_data)
+        self.client.post(reverse('profile'), post_data)       
 
         # Check if the profile is updated
         self.profile.refresh_from_db()

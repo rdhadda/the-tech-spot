@@ -8,10 +8,11 @@ class TestProductViews(TestCase):
     def setUp(self):
         # create a product
         self.product = Product.objects.create(name='Test Product', price=100)
-    
-    def test_product_details_view(self):    
 
-        # gets the URL of what would be passed through to the product detail view
+    def test_product_details_view(self):
+
+        # gets the URL of what would be passed through
+        # to the product detail view
         url = reverse('product_detail', args=[self.product.id])
 
         # simulate a get request to the product detail view
@@ -25,7 +26,7 @@ class TestProductViews(TestCase):
 
         # assert the correct product is passed in the context
         self.assertEqual(response.context['product'], self.product)
-    
+
     def test_get_products_page(self):
         response = self.client.get('/products/')
         self.assertEqual(response.status_code, 200)

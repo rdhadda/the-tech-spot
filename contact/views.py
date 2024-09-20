@@ -17,7 +17,7 @@ def contact(request):
             contact_form.save()
             messages.success(
                 request,
-                'Thank you for contacting us, we will respond within 1 working day'
+                'Thank you for contacting us, we will respond within 24 hours'
                 )
             return redirect('home')
 
@@ -38,7 +38,7 @@ def contact(request):
             except UserProfile.DoesNotExist:
                 contact_form = ContactForm()
         else:
-            contact_form = ContactForm()    
+            contact_form = ContactForm()
 
     template = 'contact/contact.html'
     context = {
@@ -47,5 +47,3 @@ def contact(request):
     }
 
     return render(request, template, context)
-
-

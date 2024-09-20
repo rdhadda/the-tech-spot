@@ -17,5 +17,3 @@ class TestModels(TestCase):
         friendly_name = Category.objects.create(name='Test Category 1',
                                                 friendly_name='Friendly Name')
         self.assertEqual(friendly_name.get_friendly_name(), 'Friendly Name')
-
-

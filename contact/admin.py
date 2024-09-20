@@ -1,6 +1,7 @@
 from django.contrib import admin
 from .models import Contact
 
+
 class ContactAdmin(admin.ModelAdmin):
     readonly_fields = (
         'name',
@@ -16,7 +17,7 @@ class ContactAdmin(admin.ModelAdmin):
         'subject',
         'message',
         'created_at',
-        'resolved',  
+        'resolved',
     )
 
     list_display = (
@@ -29,4 +30,3 @@ class ContactAdmin(admin.ModelAdmin):
 
 
 admin.site.register(Contact, ContactAdmin)
-

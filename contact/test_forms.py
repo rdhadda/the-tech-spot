@@ -17,14 +17,19 @@ class TestContactForm(TestCase):
         }
 
         for field in placeholders:
-            self.assertEqual(form.fields[field].widget.attrs['placeholder'], placeholders[field])
+            self.assertEqual(
+                form.fields[field].widget.attrs['placeholder'],
+                placeholders[field]
+            )
 
     def test_contact_form_autofocus(self):
         # Instantiate the form
         form = ContactForm()
 
         # Check that autofocus is applied to the 'name' field
-        self.assertTrue(form.fields['name'].widget.attrs.get('autofocus', False))
+        self.assertTrue(
+            form.fields['name'].widget.attrs.get('autofocus', False)
+        )
 
     def test_contact_form_labels(self):
         # Instantiate the form
