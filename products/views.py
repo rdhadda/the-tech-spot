@@ -56,14 +56,14 @@ def all_products(request):
         'current_categories': categories,
         'current_sorting': current_sorting,
     }
-    
+
     return render(request, 'products/products.html', context)
 
 
 def product_detail(request, product_id):
-    """ A view to show a products details     
+    """ A view to show a products details
     """
-    product = get_object_or_404(Product, pk=product_id) 
+    product = get_object_or_404(Product, pk=product_id)
 
     context = {
         'product': product
@@ -92,7 +92,7 @@ def add_product(request):
                 )
     else:
         form = ProductForm()
-        
+
     template = 'products/add_product.html'
     context = {
         'form': form,
