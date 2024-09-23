@@ -33,6 +33,11 @@ DEBUG = 'DEV' in os.environ
 
 ALLOWED_HOSTS = ['the-tech-spot-rd-839ecc701d38.herokuapp.com', 'localhost', '127.0.0.1']
 
+CSRF_TRUSTED_ORIGINS = [
+    'https://the-tech-spot-rd-839ecc701d38.herokuapp.com',
+    
+]
+
 
 # Application definition
 
