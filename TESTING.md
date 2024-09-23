@@ -23,12 +23,13 @@
 
 Testing was continuous throughout the website build. I used Chrome developer tools to identify and address any issues as they arose.
 
-- My automated testing consisted of using W3C Validator, JSHint, Lighthouse, Wave and the CI Linter Python.
+- My automated testing consisted of using W3C Validator, JSHint, Lighthouse, Wave the CI Linter Python and Coverage (Django Unit Testing).
 - I then manually tested the user stories along with the functionality of the website.
 
 ## Automated Testing
 
 ### W3C Validator
+
 ### JavaScript Validator
 
 All test successfully passed.
@@ -51,7 +52,124 @@ All test successfully passed.
 </details>
 
 ### Lighthouse Testing
+
+I took the opportunity to utilize Lighthouse within Chrome Developer Tools. This allowed me to test for performance, accessibility, best practices and the SEO (search engine optimization) of the website.
+
+- All pages pass Googles lighthouse tests for Desktop and Mobile.
+
+#### Desktop Testing
+
+<details>
+<summary>Lighthouse Desktop Testing Screen Shots</summary>
+
+#### Homepage
+![Homepage](documentation/images/the-tech-spot-homepage-lh.png)
+
+#### Products Page
+![Products Page](documentation/images/the-tech-spot-products.png)
+
+#### Products Detail Page
+![Products Detail Page](documentation/images/the-tech-spot-product_detail-page.png)
+
+#### Add Product Page
+![Add Product Page](documentation/images/the-tech-spot-add-product.png)
+
+#### Edit Product
+![Edit Product](documentation/images/the-tech-spot-edit-product.png)
+
+#### Bag Page
+![Bag Page](documentation/images/the-tech-spot-bag.png)
+
+#### Checkout Page
+![Checkout Page](documentation/images/the-tech-spot-checkout.png)
+
+#### Checkout Success Page
+![Checkout Success Page](documentation/images/the-tech-spot-checkout-success-lh.png)
+
+#### Profile Page
+![Profile Page](documentation/images/the-tech-spot-profile.png)
+
+#### Contact Page
+![Contact Page](documentation/images/the-tech-spot-contact.png)
+
+
+</details>
+
+#### Mobile Testing
+
+<details>
+<summary>Lighthouse Mobile Testing Screen Shots</summary>
+
+#### Homepage
+![Homepage](documentation/images/the-tech-spot-homepage-mobile.png)
+
+#### Products Page
+![Products Page](documentation/images/the-tech-spot-products-page-mobile.png)
+
+#### Products Detail Page
+![Products Detail Page](documentation/images/the-tech-spot-product_detail-page-mobile.png)
+
+#### Add Product Page
+![Add Product Page](documentation/images/the-tech-spot-add-product-mobile.png)
+
+#### Edit Product
+![Edit Product](documentation/images/the-tech-spot-edit-product-mobile.png)
+
+#### Bag Page
+![Bag Page](documentation/images/the-tech-spot-bag-mobile.png)
+
+#### Checkout Page
+![Checkout Page](documentation/images/the-tech-spot-checkout-mobile.png)
+
+#### Checkout Success Page
+![Checkout Success Page](documentation/images/the-tech-spot-checkout-success-mobile.png)
+
+#### Profile Page
+![Profile Page](documentation/images/the-tech-spot-profile-mobile.png)
+
+#### Contact Page
+![Contact Page](documentation/images/the-tech-spot-contact-mobile.png)
+
+</details>
+
 ### Wave Testing
+
+All pages pass the Wave validator.
+
+<details>
+<summary>Wave Testing</summary>
+
+#### Homepage
+![Homepage](documentation/images/the-tech-spot-home-page-wave.png)
+
+#### Products Page
+![Products Page](documentation/images/the-tech-spot-products-page-wave.png)
+
+#### Products Detail Page
+![Products Detail Page](documentation/images/the-tech-spot-product-detail-page-wave.png)
+
+#### Add Product Page
+![Add Product Page](documentation/images/the-tech-spot-add-product-page-wave.png)
+
+#### Edit Product
+![Edit Product](documentation/images/the-tech-spot-edit-product-page-wave.png)
+
+#### Bag Page
+![Bag Page](documentation/images/the-tech-spot-bag-page-wave.png)
+
+#### Checkout Page
+![Checkout Page](documentation/images/the-tech-spot-checkout-page-wave.png)
+
+#### Checkout Success Page
+![Checkout Success Page](documentation/images/the-tech-spot-checkout-success-page-wave.png)
+
+#### Profile Page
+![Profile Page](documentation/images/the-tech-spot-profile-page-wave.png)
+
+#### Contact Page
+![Contact Page](documentation/images/the-tech-spot-contact-page-wave.png)
+
+</details>
 
 ### Coverage
 <details>
