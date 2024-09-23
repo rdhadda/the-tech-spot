@@ -44,7 +44,7 @@
   <body class="d-flex flex-column min-vh-100">
     <header class="container-fluid">
       <div class="row d-flex justify-content-center align-items-center mt-3">
-        <a href="{% url 'home' %}"><img class="brand-logo" src="https://tech-spot-rdhadda.s3.eu-north-1.amazonaws.com/media/the-tech-spot-logo-no-background.png" alt="The Tech Spot Logo"></a>
+        <a href="{% url 'home' %}"><img class="brand-logo" src="{{ MEDIA_URL }}the-tech-spot-logo-no-background.png" alt="The Tech Spot Logo"></a>
       </div>
       {% include 'includes/main_nav.html' %}
       {% include 'includes/categories_nav.html' %}
