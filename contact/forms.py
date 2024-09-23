@@ -20,6 +20,11 @@ class ContactForm(forms.ModelForm):
             'message': 'Message'
         }
 
+        self.fields['name'].widget.attrs['aria-label'] = 'Name'
+        self.fields['email'].widget.attrs['aria-label'] = 'Email'
+        self.fields['subject'].widget.attrs['aria-label'] = 'Subject'
+        self.fields['message'].widget.attrs['aria-label'] = 'Message'
+
         self.fields['name'].widget.attrs['autofocus'] = True
         for field in self.fields:
             if self.fields[field].required:
