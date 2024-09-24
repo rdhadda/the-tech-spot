@@ -143,14 +143,14 @@
     {{ block.super }}
 
     <!-- Back to top button -->
-    <script type="text/javascript">
+    <script>
 		$('.btt-link').click(function(e) {
 			window.scrollTo(0,0)
 		})
 	</script>
 
     <!-- JQuery for the select dropdown -->
-    <script type="text/javascript">         
+    <script>         
         $('#sort-selector').change(function() {
             var selector = $(this)
             var currentUrl = new URL(window.location);

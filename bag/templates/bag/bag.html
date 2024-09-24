@@ -2,7 +2,6 @@
 {% load static %}
 {% load bag_tools %}
 
-
 {% block content %}
 
 <div class="container mb-5">
@@ -116,12 +115,11 @@
 </div>
 {% endblock %}
 
-
-
 {% block postloadjs %}
 {{ block.super }}
+
 <!-- Back to top button -->
-<script type="text/javascript">
+<script>
     $('.btt-link').click(function(e) {
         window.scrollTo(0,0)
     })
@@ -129,7 +127,7 @@
 
 {% include 'products/includes/quantity_input_script.html' %}
 
-<script type="text/javascript">
+<script>
     // Update quantity on click
     $('.update-link').click(function(e) {
         var form = $(this).prev('.update-form');
