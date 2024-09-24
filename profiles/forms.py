@@ -1,4 +1,6 @@
 from django import forms
+from crispy_forms.helper import FormHelper
+from crispy_forms.layout import Layout, Field
 from .models import UserProfile
 
 
@@ -6,6 +8,16 @@ class UserProfileForm(forms.ModelForm):
     class Meta:
         model = UserProfile
         exclude = ('user',)
+        fields = [
+            'default_full_name',
+            'default_phone_number',
+            'default_postcode',
+            'default_town_or_city',
+            'default_street_address1',
+            'default_street_address2',
+            'default_county',
+            'default_country'
+        ]
 
     def __init__(self, *args, **kwargs):
         """
@@ -14,6 +26,7 @@ class UserProfileForm(forms.ModelForm):
         """
         super().__init__(*args, **kwargs)
         placeholders = {
+            'default_full_name': 'Full Name',
             'default_phone_number': 'Phone Number',
             'default_postcode': 'Post Code',
             'default_town_or_city': 'Town or City',
@@ -22,6 +35,9 @@ class UserProfileForm(forms.ModelForm):
             'default_county': 'County',
         }
 
+        self.fields['default_full_name'].widget.attrs['aria-label'] = (
+            'Full Name'
+        )
         self.fields['default_phone_number'].widget.attrs['aria-label'] = (
             'Phone Number'
         )
