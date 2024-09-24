@@ -3,6 +3,7 @@
 {% load bag_tools %} 
 {% block content %}
 
+<!-- bag displays vertically stacked on small screens -->
 <div class="container mb-5">
   <div class="row">
     <div class="col">
@@ -36,8 +37,7 @@
           <div class="col-12 col-sm-6 order-sm-last">
             <p class="my-0">Price Each: £{{ item.product.price }}</p>
             <p>
-              <strong>Subtotal: </strong>£{{ item.product.price |
-              calc_subtotal:item.quantity }}
+              <strong>Subtotal: </strong>£{{ item.product.price | calc_subtotal:item.quantity }}
             </p>
           </div>
           <div class="col-12 col-sm-6">
@@ -54,8 +54,8 @@
           </a>
         </div>
       </div>
-      <div class="table-responsive rounded d-none d-md-block">
-        <div class="table-responsive rounded">
+       <!-- Displays horizontally md screens + -->     
+      <div class="table-responsive rounded d-none d-md-block">        
           <table class="table table-sm table-borderless">
             <thead class="text-blue">
               <tr>
@@ -91,8 +91,7 @@
                 {% include "bag/checkout-button.html" %}
               </td>
             </tr>
-          </table>
-        </div>
+          </table>        
         {% else %}
         <p class="lead mb-5">Your bag is empty.</p>
         <a href="{% url 'products' %}" class="btn btn-lg">
