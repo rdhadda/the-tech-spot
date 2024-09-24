@@ -1,29 +1,31 @@
-{% extends "base.html" %}
-{% load static %}
-
+{% extends "base.html" %} {% load static %}
 
 <!-- Form to allow user to contact the store -->
-{% block content %}    
-    <div class="container mb-5">
-        <div class="row d-flex justify-content-center align-items-center">
-            <div class="col-12 col-md-6">
-                <hr>
-                <h2 class="logo-font mb-4">Contact Us</h2>                
-                <hr>
-            </div>
-        </div>
-
-        <div class="row d-flex justify-content-center align-items-center">
-            <div class="col-12 col-md-6">
-                <form method="POST" action="{% url 'contact' %}" class="form mb-2">
-                    {% csrf_token %}
-                    {{ contact_form|crispy }}
-                    <div class="text-right">
-                        <a class="btn btn-outline-blue rounded-0" href="{% url 'products' %}">Cancel</a>
-                        <button class="btn btn-blue rounded-0" type="submit">Send Enquiry </button>
-                    </div>
-                </form>
-            </div>            
-        </div>
+{% block content %}
+<div class="container mb-5">
+  <div class="row d-flex justify-content-center align-items-center">
+    <div class="col-12 col-md-6">
+      <hr />
+      <h2 class="logo-font mb-4">Contact Us</h2>
+      <hr />
     </div>
+  </div>
+
+  <div class="row d-flex justify-content-center align-items-center">
+    <div class="col-12 col-md-6">
+      <form method="POST" action="{% url 'contact' %}" class="form mb-2">
+        {% csrf_token %} 
+        {{ contact_form|crispy }}
+        <div class="text-right">
+          <a class="btn btn-outline-blue rounded-0" href="{% url 'products' %}"
+            >Cancel</a
+          >
+          <button class="btn btn-blue rounded-0" type="submit">
+            Send Enquiry
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
 {% endblock %}
