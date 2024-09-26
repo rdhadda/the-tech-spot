@@ -123,7 +123,7 @@ There are three types of user for The Tech Spot.
 
 ### Colour Scheme
 
-![The-Tech-Spot](documentation\images\the-tech-spot-colour-scheme.png)
+![The-Tech-Spot](documentation/images/the-tech-spot-colour-scheme.png)
 
 The chosen colour scheme is designed to convey a sense of trust and modernity to The Tech Stop store. 
 
@@ -135,11 +135,11 @@ Google Fonts was used for the following fonts:
 
 - Fira Sans Extra Condensed - All text across the site
 
-![Typography](documentation\images\the-tech-spot-fire-sans-condensed.png)
+![Typography](documentation/images/the-tech-spot-fire-sans-condensed.png)
 
 - Bowlby One - The Tech Spot logo
 
-![Typography](documentation\images\the-tech-spot-bowlby-one.png)
+![Typography](documentation/images/the-tech-spot-bowlby-one.png)
 
 ### Imagery
 
