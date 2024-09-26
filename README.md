@@ -1,10 +1,10 @@
 # The Tech Spot
 
-The Tech Spot was created as my fourth milestone project, built using a Django framework alongside sqlite.
+The Tech Spot was created as my fourth milestone project, built using a Django framework alongside sqlite3.
 
-![The Tech Spot. Screenshot of website]()
+![The Tech Spot. Screenshot of website](documentation/images/the-tech-spot-am-responsive.png)
 
-[View The Tech Spot on Heroku]()
+[View The Tech Spot on Heroku](https://the-tech-spot-rd-839ecc701d38.herokuapp.com/)
 
 ![GitHub last commit (by committer)](https://img.shields.io/github/last-commit/rdhadda/the-tech-spot)
 ![GitHub language count](https://img.shields.io/github/languages/count/rdhadda/the-tech-spot)
@@ -148,6 +148,22 @@ All images on the webpage were taken from Currys.co.uk. I have credited these in
 ### Wireframes
 
 Wireframes were created for mobile, tablet and desktop using Balsamiq.
+
+<details>
+<summary>Desktop, Tablet & Mobile Wireframes</summary>
+
+### Desktop
+
+![Desktop Wireframes](documentation/images/desktop-wireframes.png)
+
+### Tablet
+
+![Tablet Wireframes](documentation/images/tablet-wireframes.png)
+
+### Mobile
+
+![Mobile Wireframes](documentation/images/mobile-wireframes.png)
+</details>
 
 ### Database Design
 
@@ -795,6 +811,16 @@ Please see [TESTING.md](TESTING.md) file for both automated and manual testing o
 
 ### Code Used
 
+The Tech Spot, was developed following techniques from Code Institute's Boutique Ado walkthrough.
+
 ### Media
 
+Logo.com for the Tech Spot Logo
+
 ### Acknowledgments
+
+- My mentor for their guidance and support.
+- Tutor support for helping me overcome compatibility issues.
+- My cohort for support.
+- Code Institute for informative course material.
+- The Slack community for help and support.
