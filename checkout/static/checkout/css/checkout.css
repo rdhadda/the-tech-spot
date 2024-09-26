@@ -1,3 +1,4 @@
+/* stripe styling */
 .StripeElement,
 .stripe-style-input, select {
   box-sizing: border-box;
@@ -43,6 +44,8 @@ select, select option{
 select:invalid, select option[value=""]{
   color: #1D597D !important;
 }
+
+/* loading overlay css */
 
 #loading-overlay {
   display: none;

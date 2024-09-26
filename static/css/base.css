@@ -1,3 +1,4 @@
+/* google fonts import */
 @import url('https://fonts.googleapis.com/css2?family=Bowlby+One+SC&family=Fira+Sans+Extra+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Sixtyfour&display=swap');
 
 body {   
@@ -5,12 +6,13 @@ body {
     font-family: "Fira Sans Extra Condensed", sans-serif; 
 }
 
+/* brand logo sizing */
 .brand-logo {
     width: 10rem;
     height: auto;
 }
 
-/* from Bulma */
+/* flexbox alignment for icons from Bulma */
 .icon {
     align-items: center;
     display: inline-flex;
@@ -19,14 +21,17 @@ body {
     width: 1.5rem;
 }
 
+/* text styling for logos */
 .logo-font {
     text-transform: uppercase;
 }
 
+/* Main logo link styling */
 .main-logo-link {
     width: fit-content;
 }
 
+/********************************************* button styling **************************/
 .shop-now-button {
     background: #1D597D;
     color: white;
@@ -53,6 +58,7 @@ body {
     color: white;
 }
 
+/********************************************* text styling **************************/
 .text-blue {
     color: #1D597D !important;
 }
@@ -69,14 +75,17 @@ body {
     color: #83B6B9;
 }
 
+/* Delivery banner styling */
 .delivery-banner {
     background-color: #83B6B9;
 }
 
+/* Border color utility */
 .border-blue {
     border: 1px solid #83B6B9 !important;
 }
 
+/* Back to top button styling */
 .btt-button {
     height: 45px;
     width: 45px;
@@ -86,16 +95,19 @@ body {
     
 }
 
+/* Cursor styles for links */
 .btt-link,
 .update-link,
 .remove-item {
     cursor: pointer;
 }
 
+/* Placeholder text styling */
 input[name='q']::placeholder {
     color: #aab7c4;
 }
 
+/* Message container for notifications */
 .message-container {
     position: fixed;
     top: 72px;
@@ -103,6 +115,7 @@ input[name='q']::placeholder {
     z-index: 99999999999;
 }
 
+/********************************************************** Custom toast message styling */
 .custom-toast {
     overflow: visible;
 }
@@ -123,7 +136,7 @@ input[name='q']::placeholder {
     right: 36px;
 }
 
-/* Convenience classes - colors copied from Bootstrap */
+/********************************************************** Convenience classes - colors copied from Bootstrap */
 .arrow-primary {
     border-bottom-color: #007bff !important;
 }
@@ -156,13 +169,14 @@ input[name='q']::placeholder {
     border-bottom-color: #343a40 !important;
 }
 
+/* Bag notification wrapper styling */
 .bag-notification-wrapper {
     height: 100px;
     overflow-x: hidden;
     overflow-y: auto;
 }
 
-/* Allauth form formatting */
+/****************************************************************** Allauth form formatting */
 
 .allauth-form-inner-content p {
     margin-top: 1.5rem; /* mt-4 */
@@ -216,7 +230,7 @@ input[name='q']::placeholder {
 	color: #1D597D; /* text-info */
 }
 
-/* Product Form */
+/* Product Form styling */
 
 .btn-file {
     position: relative;
@@ -233,6 +247,7 @@ input[name='q']::placeholder {
     cursor: pointer;
 }
 
+/* Custom checkbox styling */
 .custom-checkbox .custom-control-label::before {
     border-radius: 0;
     border-color: #dc3545;
@@ -244,6 +259,7 @@ input[name='q']::placeholder {
     border-radius: 0;
 }
 
+/* Footer styling */
 footer{
     background-color:#83b6b9;
     color:black;

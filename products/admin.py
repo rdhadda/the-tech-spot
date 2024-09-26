@@ -6,6 +6,7 @@ class ProductAdmin(admin.ModelAdmin):
     """ Displays these fields within the Django
      admin login
     """
+    # Fields shown in the list view of the Contact entries
     list_display = (
         'sku',
         'name',
@@ -22,6 +23,7 @@ class CategoryAdmin(admin.ModelAdmin):
     """ Displays these fields within the Django
      admin login
     """
+    # Fields shown in the list view of the Contact entries
     list_display = (
         'friendly_name',
         'name'

@@ -3,7 +3,7 @@
 {% load bag_tools %} 
 {% block content %}
 
-<!-- bag displays vertically stacked on small screens -->
+<!-- bag displays vertically on small screens -->
 <div class="container mb-5">
   <div class="row">
     <div class="col">
@@ -16,10 +16,13 @@
       {% if bag_items %}
       <div class="d-block d-md-none">
         <div class="row">
+          <!-- bag total include -->
           <div class="col">{% include "bag/bag-total.html" %}</div>
         </div>
         <div class="row">
-          <div class="col">
+          <!-- checkout button include -->
+          <div class="col"
+          > 
             {% include "bag/checkout-button.html" %}
             <p class="text-muted mb-5">
               A summary of your bag contents is below
@@ -29,17 +32,22 @@
         {% for item in bag_items %}
         <div class="row">
           <div class="col-12 col-sm-6 mb-2">
+            <!-- product image include -->
             {% include "bag/product-image.html" %}
           </div>
           <div class="col-12 col-sm-6 mb-2">
+            <!-- product info include  -->
             {% include "bag/product-info.html" %}
           </div>
+          <!-- product price -->
           <div class="col-12 col-sm-6 order-sm-last">
             <p class="my-0">Price Each: £{{ item.product.price }}</p>
             <p>
+              <!-- product subtotal -->
               <strong>Subtotal: </strong>£{{ item.product.price | calc_subtotal:item.quantity }}
             </p>
           </div>
+          <!-- quantity include -->
           <div class="col-12 col-sm-6">
             {% include "bag/quantity-form.html" %}
           </div>
@@ -68,12 +76,17 @@
             </thead>
             {% for item in bag_items %}
             <tr>
+              <!-- product image include -->
               <td class="p-3 w-25">{% include "bag/product-image.html" %}</td>
+              <!-- product info include -->
               <td class="py-3">{% include "bag/product-info.html" %}</td>
+              <!-- product price -->
               <td class="py-3">
                 <p class="my-0">£{{ item.product.price }}</p>
               </td>
+              <!-- quantity include -->
               <td class="py-3">{% include "bag/quantity-form.html" %}</td>
+              <!-- product price and subtotal -->
               <td class="py-3">
                 <p class="my-0">
                   £{{ item.product.price | calc_subtotal:item.quantity }}
@@ -82,11 +95,13 @@
             </tr>
             {% endfor %}
             <tr>
+              <!-- bag total include -->
               <td colspan="5" class="pt-5 text-right">
                 {% include "bag/bag-total.html" %}
               </td>
             </tr>
             <tr>
+              <!-- checkout button include -->
               <td colspan="5" class="text-right">
                 {% include "bag/checkout-button.html" %}
               </td>
@@ -116,7 +131,7 @@
 {% block postloadjs %} 
 {{ block.super }}
 
-<!-- Back to top button -->
+<!-- Back to top button JS -->
 <script>
   $(".btt-link").click(function (e) {
     window.scrollTo(0, 0);

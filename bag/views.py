@@ -11,7 +11,7 @@ from django.contrib import messages
 
 
 def view_bag(request):
-    """ View show the contents of the shoppers bag """
+    """ View to show the contents of the shoppers bag """
     return render(request, 'bag/bag.html')
 
 
