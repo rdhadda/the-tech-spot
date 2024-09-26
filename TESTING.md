@@ -1,8 +1,8 @@
-# The Tech SPot - Testing
+# The Tech Spot - Testing
 
-![The Tech Spot. Screenshot of website]()
+![The Tech Spot. Screenshot of website](documentation/images/the-tech-spot-am-responsive.png)
 
-[View The Tech Spot on Heroku]()
+[View The Tech Spot on Heroku](https://the-tech-spot-rd-839ecc701d38.herokuapp.com/)
 
 ## CONTENTS
 
@@ -93,7 +93,7 @@ W3C validator was used to validate the HTML on all pages of the website. It was 
 
 JSHint was used to validate the JavaScript.
 
-- All test successfully passed.
+All test successfully passed.
 
 <details>
 <summary>JS Hint Validator</summary>
