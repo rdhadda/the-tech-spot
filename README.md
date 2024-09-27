@@ -81,8 +81,8 @@ The Tech Spot is designed to provide users with an online platform where they ca
 
 There are three types of user for The Tech Spot. 
 
-- Guest User - A user who doesn't have an account.
-- User - A user who has an account.
+- Shopper - A shopper who doesn't have an account.
+- Shopper (with account) - A shopper who has an account.
 - Admins - A user(s) who has superuser status, giving them the ability to perform additional tasks such a manage orders, add/delete products.
 
 | **ID** | **As A/AN** | **I Want To Be Able To** | **So I Can** |
