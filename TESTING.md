@@ -694,3 +694,4 @@ Each device tested the site using the following browsers:
 
 | # | Bug | How I solved the issue |
 | :--- | :--- | :--- |
+| 1 | After creating an account on the website. I tried to login using the e-mail and password which was used to create the account. However, I kept getting an error 'The email address and/or password you specified are not correct.' I then tried again using the username and password which allowed me to login into the site.  |  I tried to change the ``` ACCOUNT_AUTHENTICATION_METHOD ``` to just ``` email ``` rather than ``` username_email``` unfortunately this didn't resolve the issue. I reached out to student support and unfortunately we couldn't find a resolution. I've opted to only allow users to login using their username and password rather than their e-mail until I can find a resolution to the problem.  |
