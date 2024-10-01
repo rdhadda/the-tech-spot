@@ -29,7 +29,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.getenv('SECRET_KEY', '')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = 'DEV' in os.environ
+DEBUG = os.environ.get('DEV') == 'True'
 
 ALLOWED_HOSTS = ['the-tech-spot-rd-839ecc701d38.herokuapp.com', 'localhost', '127.0.0.1']
 
@@ -73,6 +73,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+
 ]
 
 ROOT_URLCONF = 'the_tech_spot.urls'
@@ -110,10 +111,10 @@ TEMPLATES = [
 AUTHENTICATION_APPLICATION = (
 
     # Needed to login by username in Django admin, regardless of `allauth`
-    'django.contib.auth.backends.ModelBackend',
+    'django.contrib.auth.backends.ModelBackend',
 
     # `allauth` specific authentication methods, such as login by e-mail
-    'allauth.account.auth_backends.AuthenicationBackend',
+    'allauth.account.auth_backends.AuthenticationBackend'
 )
 
 # Stores the current message in the session
@@ -123,7 +124,7 @@ SITE_ID = 1
 
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
-""" This lines tells allauth to use either username/email
+""" This lines tells allauth to use either username
 as an authentication method """
 ACCOUNT_AUTHENTICATION_METHOD = 'username_email'
 
@@ -134,6 +135,8 @@ and required to enter it twice on the registration page """
 ACCOUNT_EMAIL_REQUIRED = True
 ACCOUNT_EMAIL_VERIFICATION = 'mandatory'
 ACCOUNT_SIGNUP_EMAIL_ENTER_TWICE = True
+ACCOUNT_UNIQUE_EMAIL = True
+ACCOUNT_USERNAME_REQUIRED = True
 
 # Username cannot be shorter than 4 characters
 ACCOUNT_USERNAME_MIN_LENGTH = 4
@@ -267,4 +270,3 @@ else:
     EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER')
     EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASS')
     DEFAULT_FROM_EMAIL = os.environ.get('EMAIL_HOST_USER')
-
