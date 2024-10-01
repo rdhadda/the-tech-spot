@@ -124,9 +124,9 @@ SITE_ID = 1
 
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
-""" This lines tells allauth to use either username
+""" This lines tells allauth to use username
 as an authentication method """
-ACCOUNT_AUTHENTICATION_METHOD = 'username_email'
+ACCOUNT_AUTHENTICATION_METHOD = 'username'
 
 """ These 3 settings make it so an e-mail
 is required to register for the site,
