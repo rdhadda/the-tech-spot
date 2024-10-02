@@ -4,6 +4,8 @@ from .forms import UserProfileForm
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from checkout.models import Order
+from allauth.account.views import PasswordChangeView
+from django.urls import reverse
 
 
 @login_required
@@ -62,3 +64,8 @@ def order_history(request, order_number):
     }
 
     return render(request, template, context)
+
+
+class CustomPasswordChangeView(PasswordChangeView):
+    def get_success_url(self):
+        return reverse('profile')
