@@ -663,6 +663,14 @@ Each device tested the site using the following browsers:
 |---|---|---|---|---|
 | Update information button| User profile updates with the newly entered information | Clicked the button | Users profile is updated with the newly entered information |Pass |
 | Order number links | Directs the user through to the order confirmation screen. A toast is displayed informing the user they are viewing a previous order | Clicked the link | Directed to a previous order confirmation and toast displayed |Pass |
+| Change password button | Directs the user through to the change password page where they can change their password | Clicked the link | Directed to the change password page |Pass |
+
+#### Change Password Page
+
+| Feature | Expected Outcome | Testing Performed | Result  | Pass/Fail |
+|---|---|---|---|---|
+| Change password button | Users password is updated to the new password and directed to the profile page | Clicked the link | Password updated and success toast shown and re-directed to the profile page |Pass |
+| Back to profile button | Directs the user to the profile page | Clicked the link | Directed to the profile page |Pass |
 
 #### Contact Us Page
 
