@@ -289,6 +289,24 @@ At the bottom of the summary is a button which will take the shopper through to 
 
 The profile page shows the users default delivery information. Users can update this information at anytime by entering their information and clicking on the update information button. If successful the user will be presented with a success toast. 
 
+There is also a change password button which takes the user through to the built in Django change password view. Once updated the user is redirected back to the profile page. In order to implement the redirect, I had to inherit Django's PasswordChangeView and override the get success url with the profile URL.
+
+```
+class CustomPasswordChangeView(PasswordChangeView): 
+    def get_success_url(self):
+        return reverse('profile')
+
+```
+
+I then updated urls.py to reflect this change.
+
+```
+path('accounts/password/change/',
+         CustomPasswordChangeView.as_view(),
+         name='account_change_password'),
+         
+```
+
 On the right hand side of the page displays the users past shopping history. The order number is a link to the order confirmation. 
 
 ![Profile Page](documentation/images/the-tech-spot-profile-page.png)
