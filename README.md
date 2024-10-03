@@ -105,18 +105,19 @@ There are three types of user for The Tech Spot.
 | **13** | Shopper | Sort multiple categories of products simultaneously |  Find the best-priced or best-rated products across all categories |
 | **14** | Shopper | Search for products by name, description or keyword  | Easily locate a specific product|
 | **15** | Shopper | Easily see what I've searched for and the number of results | Quickly decide whether the product I want is available|
+| **16** | Shopper | Read product reviews | Decide whether the product is right for me|
 |**Purchasing & Checkout**|
-| **16** | Shopper | Select the quantity of a product | Guarantee I select the correct quantity  |
-| **17** | Shopper | View items in my bag to be purchased | Identify the total cost of my purchase and all items I will receive  |
-| **18** | Shopper | Adjust the quantity of individual items in my bag  | Easily make changes to my purchase before checkout |
-| **19** | Shopper | Easily enter my payment information | Check out quickly and with no hassle |
-| **20** | Shopper | Feel my personal and payment information is safe and secure | Confidently provide the needed information to make a purchase |
-| **21** | Shopper | View an order confirmation after checkout | Check that no mistakes have been made |
-| **22** | Shopper | Receive an email confirmation after checking out | Keep the confirmation of what I've purchased for my records and have confidence that the shop has received my order |
+| **17** | Shopper | Select the quantity of a product | Guarantee I select the correct quantity  |
+| **18** | Shopper | View items in my bag to be purchased | Identify the total cost of my purchase and all items I will receive  |
+| **19** | Shopper | Adjust the quantity of individual items in my bag  | Easily make changes to my purchase before checkout |
+| **20** | Shopper | Easily enter my payment information | Check out quickly and with no hassle |
+| **21** | Shopper | Feel my personal and payment information is safe and secure | Confidently provide the needed information to make a purchase |
+| **22** | Shopper | View an order confirmation after checkout | Check that no mistakes have been made |
+| **23** | Shopper | Receive an email confirmation after checking out | Keep the confirmation of what I've purchased for my records and have confidence that the shop has received my order |
 |**Admin & Store Management**|
-| **22** | Admin | Add a product | Add new items to my store |
-| **22** | Admin | Edit/update a product | Change product prices, descriptions, images and other product criteria |
-| **22** | Admin | Delete a product | Remove items that are no longer for sale |
+| **24** | Admin | Add a product | Add new items to my store |
+| **25** | Admin | Edit/update a product | Change product prices, descriptions, images and other product criteria |
+| **26** | Admin | Delete a product | Remove items that are no longer for sale |
 
 
 ## Design
@@ -191,7 +192,11 @@ The relationship between the tables are as follows:
 
 6. UserProfile to Order - One-to-Many - One user can have many orders.
 
-![Database Schema](documentation/images/the-tech-spot-database-schema.png)
+7. Review to Product - Many-to-one - Each review belongs to one product, but one product can have many reviews.
+
+8. Review to User - Many-to-one - Each review is written by one user, but one user can write many reviews.
+
+   ![Database Schema](documentation/images/the-tech-spot-database-schema.png)
 
 ### Features
 
@@ -239,9 +244,17 @@ There is also a quantity input with plus and minus buttons allowing shoppers to 
 
 Shoppers then have the option to add the quantity to their basket. Once added to the basket a toast is displayed showing the shopper what has been added to the basket and a link to go to secure checkout from the toast.
 
+There is a leave a review button to allow a user to leave a review for the product. This directs the user through to the product review page where they can leave a review and rate the product.
+
 There is also a keep shopping button which takes the shopper back to the previous page.
 
 ![Product Detail Page](documentation/images/the-tech-spot-product-detail-page.png)
+
+#### Product Review Page
+
+The shopper has the ability to add a review and rating to any product. They are limited to one review per product. Once submitted the user is redirected to the product detail page where they have the ability to view their review and others on the product.
+
+![Product Review Page](documentation/images/the-tech-spot-add-review%20page.png)
 
 #### Bag Page
 

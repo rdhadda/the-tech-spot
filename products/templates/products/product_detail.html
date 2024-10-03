@@ -180,6 +180,34 @@
   </div>
 </section>
 
+<!-- Reviews Section -->     
+<section class="py-5">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-8 text-center">
+        <h3 class="text-center mb-3">Reviews</h3>
+        <a class="text-white btn-blue p-2 mb-4 text-decoration-none" href="{% url 'add_review' product.id %}">Leave A Review</a>
+
+        <!-- Loop through reviews -->
+        {% for review in reviews %}
+          <div class="card mt-4 mb-4">
+            <div class="card-body">              
+              <h6 class="card-subtitle mb-2 text-muted">
+                Rating: {{ review.rating }} / 5
+              </h6>
+              <p class="card-text">{{ review.review }}</p>
+              <h6 class="card-title">Review By: {{ review.user.username }}</h6>
+              <p class="text-muted small">Posted on: {{ review.created_at }}</p>
+            </div>
+          </div>
+        {% empty %}
+          <p class="text-center mt-3">No reviews yet. Be the first to leave a review!</p>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</section>
+
 {% endblock %} 
 {% block postloadjs %} 
 {{ block.super }} 

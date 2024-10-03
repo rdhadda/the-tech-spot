@@ -3,8 +3,8 @@ from django.contrib import messages
 from django.db.models import Q
 from django.db.models.functions import Lower
 from django.contrib.auth.decorators import login_required
-from .models import Product, Category
-from .forms import ProductForm
+from .models import Product, Category, Review
+from .forms import ProductForm, ReviewForm
 
 
 def all_products(request):
@@ -64,9 +64,11 @@ def product_detail(request, product_id):
     """ A view to show a products details
     """
     product = get_object_or_404(Product, pk=product_id)
+    reviews = product.reviews.all()
 
     context = {
-        'product': product
+        'product': product,
+        'reviews': reviews
     }
 
     return render(request, 'products/product_detail.html', context)
@@ -144,3 +146,49 @@ def delete_product(request, product_id):
     product.delete()
     messages.success(request, 'Product deleted!')
     return redirect(reverse('products'))
+
+
+def add_review(request, product_id):
+    product = get_object_or_404(Product, pk=product_id)
+
+    # Check if the user has already submitted a review for this product
+    existing_review = Review.objects.filter(product=product,
+                                            user=request.user).first()
+
+    # Prevents the same user leaving multiple reviews
+    if existing_review:
+        messages.error(
+            request,
+            'You have already submitted a review for this product.'
+        )
+        return redirect(reverse('product_detail', args=[product_id]))
+
+    if not request.user.is_authenticated:        
+        messages.warning(
+            request,
+            'You must be logged in to leave a review.'
+        )
+
+        return redirect(reverse('product_detail', args=[product_id]))
+
+    if request.method == 'POST':
+        form = ReviewForm(request.POST)
+        if form.is_valid():
+            review = form.save(commit=False)
+            review.product = product
+            review.user = request.user
+            review.save()
+            messages.success(
+                request,
+                'Thank you for submitting a review'
+                )
+            return redirect(reverse('product_detail', args=[product_id]))
+    else:
+        form = ReviewForm()
+
+    context = {
+        'product': product,
+        'form': form
+    }
+
+    return render(request, 'products/add_review.html', context)

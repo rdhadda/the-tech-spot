@@ -1,5 +1,5 @@
 from django import forms
-from .models import Product, Category
+from .models import Product, Category, Review
 from .widgets import CustomClearableFileInput
 
 
@@ -27,3 +27,40 @@ class ProductForm(forms.ModelForm):
         # Set aria-label for the image field
         self.fields['image'].widget.attrs[
             'aria-label'] = 'Select a Product Image'
+
+
+class ReviewForm(forms.ModelForm):
+
+    class Meta:
+        model = Review
+        fields = ['review', 'rating']
+
+    def clean_rating(self):
+        rating = self.cleaned_data.get('rating')
+        if rating < 0 or rating > 5:
+            raise forms.ValidationError("Rating must be between 0 and 5.")
+        return rating
+
+    def __init__(self, *args, **kwargs):
+        """
+        Add placeholders, classes, and aria labels, remove auto-generated
+        labels, and set autofocus on the first field.
+        """
+        super().__init__(*args, **kwargs)
+        placeholders = {
+            'review': 'Add Your Review Here',
+            'rating': 'Rate Me Out Of 5',
+        }
+
+        for field_name, field in self.fields.items():
+            # Set placeholder and class for each field
+            field.widget.attrs['placeholder'] = placeholders.get(
+                                                field_name, '')
+            field.widget.attrs['class'] = 'border-blue rounded-0'
+            field.label = False
+
+        # Set aria-labels for accessibility
+        self.fields['review'].widget.attrs['aria-label'] = 'Write A Review'
+        self.fields['rating'].widget.attrs['aria-label'] = 'Add A Rating'
+        # Set autofocus on the first field (review)
+        self.fields['review'].widget.attrs['autofocus'] = True

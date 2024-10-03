@@ -549,18 +549,19 @@ TOTAL                                                         981    305    69%
 | **13** | Shopper | Sort multiple categories of products simultaneously | Find the best-priced or best-rated products across all categories | On the all products page the dropdown menu can be used to sort products on depending on the shoppers needs |
 | **14** | Shopper | Search for products by name, description, or keyword | Easily locate a specific product | Search bar on the website available across all pages where keywords will match with product descriptions  |
 | **15** | Shopper | Easily see what I've searched for and the number of results | Quickly decide whether the product I want is available | A display of search results and count of products displayed |
+| **16** | Shopper | Read product reviews | Decide whether the product is right for me| User has the ability to create and read other shoppers reviews on the product detail page|
 | **Purchasing & Checkout** |
-| **16** | Shopper | Select the quantity of a product | Guarantee I select the correct quantity | Quantity selector on the product detail page and on the bag page |
-| **17** | Shopper | View items in my bag to be purchased | Identify the total cost of my purchase and all items I will receive | All items in the shopping bag can be displayed by clicking on the shopping basket in the navbar. This will display all items in the bag and total cost of all items |
-| **18** | Shopper | Adjust the quantity of individual items in my bag | Easily make changes to my purchase before checkout | Quantity adjustment is available on the bag page to allow a user to adjust the quantity of items before checkout, without having to go back to the product detail page |
-| **19** | Shopper | Easily enter my payment information | Check out quickly and with no hassle | On the checkout page there is a section for the user to fill out their payment information. Immediate feedback is provided an issue is detected  |
-| **20** | Shopper | Feel my personal and payment information is safe and secure | Confidently provide the needed information to make a purchase | All payments are taken using Stripe a secure third party payment system |
-| **21** | Shopper | View an order confirmation after checkout | Check that no mistakes have been made | An order confirmation page is displayed directly after a purchase is made. This gives a summary of the order details post-purchase  |
-| **22** | Shopper | Receive an email confirmation after checking out | Keep the confirmation of what I've purchased for my records | An automated email is sent to the user after a purchase is made |
+| **17** | Shopper | Select the quantity of a product | Guarantee I select the correct quantity | Quantity selector on the product detail page and on the bag page |
+| **18** | Shopper | View items in my bag to be purchased | Identify the total cost of my purchase and all items I will receive | All items in the shopping bag can be displayed by clicking on the shopping basket in the navbar. This will display all items in the bag and total cost of all items |
+| **19** | Shopper | Adjust the quantity of individual items in my bag | Easily make changes to my purchase before checkout | Quantity adjustment is available on the bag page to allow a user to adjust the quantity of items before checkout, without having to go back to the product detail page |
+| **20** | Shopper | Easily enter my payment information | Check out quickly and with no hassle | On the checkout page there is a section for the user to fill out their payment information. Immediate feedback is provided an issue is detected  |
+| **21** | Shopper | Feel my personal and payment information is safe and secure | Confidently provide the needed information to make a purchase | All payments are taken using Stripe a secure third party payment system |
+| **22** | Shopper | View an order confirmation after checkout | Check that no mistakes have been made | An order confirmation page is displayed directly after a purchase is made. This gives a summary of the order details post-purchase  |
+| **23** | Shopper | Receive an email confirmation after checking out | Keep the confirmation of what I've purchased for my records | An automated email is sent to the user after a purchase is made |
 | **Admin & Store Management** |
-| **23** | Admin | Add a product | Add new items to my store | A product management dropdown can be accessed from the account icon on the navbar. This option is only visible if the user is a super.user. Once accessed a form is displayed allowing the admin to add a product to the store |
-| **24** | Admin | Edit/update a product | Change product prices, descriptions, images, and other product criteria | Super users have access to edit links on both the product and product detail page. The link takes the admin through to a form where any product details can be amended |
-| **25** | Admin | Delete a product | Remove items that are no longer for sale | Super users have access to a delete link on the product and product detail pages. Once clicked the admin will be presented with modal confirming they would like to delete the chosen product |
+| **24** | Admin | Add a product | Add new items to my store | A product management dropdown can be accessed from the account icon on the navbar. This option is only visible if the user is a super.user. Once accessed a form is displayed allowing the admin to add a product to the store |
+| **25** | Admin | Edit/update a product | Change product prices, descriptions, images, and other product criteria | Super users have access to edit links on both the product and product detail page. The link takes the admin through to a form where any product details can be amended |
+| **26** | Admin | Delete a product | Remove items that are no longer for sale | Super users have access to a delete link on the product and product detail pages. Once clicked the admin will be presented with modal confirming they would like to delete the chosen product |
 
 
 
@@ -629,6 +630,15 @@ Each device tested the site using the following browsers:
 | Quantity Plus Button | Increases the desired quantity. The plus button doesn't allow the user to go above 99 | Clicked the plus button | Quantity doesn't go above 99, but does increase by 1 if the quantity is below 99 |Pass |
 | Add to cart button| Adds the product to the bag with the desired quantity and toast displayed | Clicked the add to cart button | Correct quantity and product added to bag and toast displayed |Pass |
 | Keep shopping button| Directs the user back to the all products page | Clicked the keep shopping button | Directed back to the all products page |Pass |
+| Leave Review Button| Directs the user to the add review page | Clicked the button | Directed to the add review page |Pass |
+| Leave Review Button (User not logged in)| Warning toast displayed informing user they must be logged in | Warning toast displayed |Pass |
+
+#### Add Review Page
+
+| Feature | Expected Outcome | Testing Performed | Result  | Pass/Fail |
+|---|---|---|---|---|
+| Submit Review Button | Shopper directed back to the product detail page and success toast displayed after filling in a valid form | Clicked the button | Directed to the product detail page and toast displayed |Pass |
+| Cancel Button | Shopper directed back to the product detail page | Clicked the button | Directed to the product detail page |Pass |
 
 #### Bag Page
 
