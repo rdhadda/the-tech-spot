@@ -254,6 +254,10 @@ There is also a keep shopping button which takes the shopper back to the previou
 
 The shopper has the ability to add a review and rating to any product. They are limited to one review per product. Once submitted the user is redirected to the product detail page where they have the ability to view their review and others on the product.
 
+At present the shopper doesn't have the ability to edit or delete the review they have created. I believe this represents the users original opinions and encourages careful thought. 
+
+I may opt to add crud functionality to reviews in a future release of the website.
+
 ![Product Review Page](documentation/images/the-tech-spot-add-review%20page.png)
 
 #### Bag Page
