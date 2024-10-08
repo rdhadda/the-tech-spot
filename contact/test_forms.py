@@ -5,6 +5,11 @@ from .forms import ContactForm
 class TestContactForm(TestCase):
 
     def test_contact_form_placeholders(self):
+        """
+        Test that the contact form fields have the correct placeholders.
+        Asserts that each field's placeholder matches the expected value.
+
+        """
         # Instantiate the form
         form = ContactForm()
 
@@ -23,6 +28,11 @@ class TestContactForm(TestCase):
             )
 
     def test_contact_form_autofocus(self):
+        """ 
+        Test that the 'name' field of
+        the contact form has the autofocus attribute.
+
+        """
         # Instantiate the form
         form = ContactForm()
 
@@ -32,6 +42,10 @@ class TestContactForm(TestCase):
         )
 
     def test_contact_form_labels(self):
+        """
+        Test that all labels are removed from the fields of the contact form.
+
+        """
         # Instantiate the form
         form = ContactForm()
 

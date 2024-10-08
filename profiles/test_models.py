@@ -5,6 +5,7 @@ from django.contrib.auth.models import User
 class TestUserProfileModel(TestCase):
 
     def setUp(self):
+        """Set up a test user and their associated user profile. """
         # Create a user and user profile
         self.user = User.objects.create_user(username='testuser',
                                              password='password123')

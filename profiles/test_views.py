@@ -7,7 +7,10 @@ from .forms import UserProfileForm
 class TestProfile(TestCase):
 
     def setUp(self):
-
+        """
+        Set up a test user with a UserProfile and log
+        them in for the test case.
+        """
         # Create a user and associate it with a UserProfile
         self.user = User.objects.create_user(username='testdjangouser',
                                              password='password123')

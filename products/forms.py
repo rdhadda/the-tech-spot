@@ -14,6 +14,11 @@ class ProductForm(forms.ModelForm):
                              widget=CustomClearableFileInput)
 
     def __init__(self, *args, **kwargs):
+        """
+        Initialize the form with category choices 
+        and custom styling for fields.
+
+        """
         super().__init__(*args, **kwargs)
         categories = Category.objects.all()
         # Get category IDs and friendly names for dropdown choices
@@ -36,6 +41,7 @@ class ReviewForm(forms.ModelForm):
         fields = ['review', 'rating']
 
     def clean_rating(self):
+        """Validate the rating field to ensure it is between 0 and 5."""
         rating = self.cleaned_data.get('rating')
         if rating < 0 or rating > 5:
             raise forms.ValidationError("Rating must be between 0 and 5.")

@@ -5,7 +5,11 @@ from checkout.forms import OrderForm
 class TestOrderForm(TestCase):
 
     def test_order_form_valid_data(self):
-        # Test valid data
+        """
+        Test that the order form is valid when provided with valid data.
+        Asserts that the form's validity is True.
+        """
+
         form_data = {
             'full_name': 'Test User',
             'email': 'testuser@example.com',
@@ -18,9 +22,13 @@ class TestOrderForm(TestCase):
             'county': 'Test County',
         }
         form = OrderForm(data=form_data)
-        self.assertTrue(form.is_valid())  # Form should be valid
+        self.assertTrue(form.is_valid()) 
 
     def test_order_form_invalid_data(self):
+        """
+        Test that the order form is invalid when required fields are missing
+        or contain invalid data. Asserts that the form's validity is False.
+        """
         # Test missing required fields
         form_data = {
             'full_name': '',
@@ -32,10 +40,10 @@ class TestOrderForm(TestCase):
             'country': '',
         }
         form = OrderForm(data=form_data)
-        self.assertFalse(form.is_valid())  # Form should be invalid
+        self.assertFalse(form.is_valid()) 
 
     def test_order_form_placeholder_attributes(self):
-        # Test placeholders and attributes in form fields
+        """ Test placeholders and attributes in form fields """
         form = OrderForm()
         self.assertEqual(
             form.fields['full_name'].widget.attrs['placeholder'],
@@ -59,7 +67,7 @@ class TestOrderForm(TestCase):
         )
 
     def test_order_form_autofocus(self):
-        # Test autofocus attribute
+        """ Test autofocus attribute """
         form = OrderForm()
         self.assertIn('autofocus', form.fields['full_name'].widget.attrs)
         self.assertTrue(form.fields['full_name'].widget.attrs['autofocus'])

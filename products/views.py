@@ -149,6 +149,10 @@ def delete_product(request, product_id):
 
 
 def add_review(request, product_id):
+    """
+    Handle adding a review for a product, ensuring the user is authenticated
+    and has not already submitted a review for the same product.
+    """
     product = get_object_or_404(Product, pk=product_id)
 
     # Check if the user has already submitted a review for this product
